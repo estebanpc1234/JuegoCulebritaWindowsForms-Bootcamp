@@ -15,4 +15,6 @@ namespace Juego_Culebrita_WinForms
             InitializeComponent();
         }
     }
+
+    
 }
