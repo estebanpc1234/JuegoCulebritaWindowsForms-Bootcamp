@@ -25,7 +25,8 @@ namespace Juego_Culebrita_WinForms
             random = new Random();
 
             SpawnFood();
-            tmGameTimer.Interval = snake.Speed;
+            
+            
         }
 
         private void timer_tick(object sender, EventArgs e)
@@ -43,9 +44,10 @@ namespace Juego_Culebrita_WinForms
             {
                 frmLose lose = new frmLose();
                 this.Hide();
-                lose.Show();    
+                tmGameTimer.Stop();
+                lose.ShowDialog();
             }
-
+            tmGameTimer.Interval = Snake.SpeedUp(snake.FoodEaten);
             pbxTable.Invalidate();
         }
 
@@ -80,6 +82,7 @@ namespace Juego_Culebrita_WinForms
             } while (snake.Body.Contains(p));
 
             food = p;
+            txtShowScore.Text = snake.FoodEaten.ToString();
         }
 
     }

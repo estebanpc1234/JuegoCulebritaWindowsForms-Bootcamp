@@ -10,8 +10,8 @@ namespace Juego_Culebrita_WinForms
     {
         public List<Point> Body { get; set; }
         public int Step { get; set; } = 10;
-        public int Speed { get; set; } = 200;
-        public int FoodEaten { get; set; }
+        public int Speed { get; set; }
+        public int FoodEaten { get; set; } = 0;
         public int LimitX { get; set; }
         public int LimitY { get; set; }    
         public bool IsDead { get; set; }
@@ -23,6 +23,7 @@ namespace Juego_Culebrita_WinForms
         {
             LimitX = limitX;
             LimitY = limitY;
+            
 
             Body = new List<Point>();
 
@@ -41,7 +42,12 @@ namespace Juego_Culebrita_WinForms
 
         }
 
-        public void Grow() => IsGrowInNextMove = true;
+        public void Grow()
+        {
+            IsGrowInNextMove = true;
+            FoodEaten++;
+            SpeedUp(FoodEaten);
+        }
 
         public void Move() 
         {
@@ -60,11 +66,29 @@ namespace Juego_Culebrita_WinForms
             else IsGrowInNextMove = false;
 
             CheckIsDead();
+            
+            
 
         }
-        public void SpeedUp()
+        public static int SpeedUp(int FoodEaten)
         {
 
+            if (FoodEaten >= 5)
+            {
+                return 80;
+            }
+            else if (FoodEaten >= 10)
+            {
+                return 60;
+            }
+            else if (FoodEaten >= 20)
+            {
+                return 30;
+            }
+            else
+            {
+                return 100;
+            }
         }
 
         public void CheckIsDead()
