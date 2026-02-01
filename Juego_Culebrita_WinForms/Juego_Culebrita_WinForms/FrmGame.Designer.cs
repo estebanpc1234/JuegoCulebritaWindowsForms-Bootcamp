@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGame));
             pbxTable = new PictureBox();
             lblScore = new Label();
-            lblShowScore = new Label();
             tmGameTimer = new System.Windows.Forms.Timer(components);
+            txtShowScore = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbxTable).BeginInit();
             SuspendLayout();
             // 
@@ -40,9 +41,11 @@
             // 
             pbxTable.BackColor = SystemColors.ButtonShadow;
             pbxTable.BorderStyle = BorderStyle.Fixed3D;
+            pbxTable.Image = (Image)resources.GetObject("pbxTable.Image");
             pbxTable.Location = new Point(78, 136);
             pbxTable.Name = "pbxTable";
-            pbxTable.Size = new Size(863, 475);
+            pbxTable.Size = new Size(552, 487);
+            pbxTable.SizeMode = PictureBoxSizeMode.AutoSize;
             pbxTable.TabIndex = 0;
             pbxTable.TabStop = false;
             pbxTable.Paint += pbxTable_Paint;
@@ -57,27 +60,28 @@
             lblScore.TabIndex = 1;
             lblScore.Text = "Score:";
             // 
-            // lblShowScore
-            // 
-            lblShowScore.AutoSize = true;
-            lblShowScore.Font = new Font("Segoe UI", 13.8F);
-            lblShowScore.Location = new Point(156, 81);
-            lblShowScore.Name = "lblShowScore";
-            lblShowScore.Size = new Size(26, 31);
-            lblShowScore.TabIndex = 2;
-            lblShowScore.Text = "0";
-            // 
             // tmGameTimer
             // 
             tmGameTimer.Enabled = true;
             tmGameTimer.Tick += timer_tick;
+            // 
+            // txtShowScore
+            // 
+            txtShowScore.Enabled = false;
+            txtShowScore.Font = new Font("Segoe UI", 15F);
+            txtShowScore.HideSelection = false;
+            txtShowScore.Location = new Point(156, 75);
+            txtShowScore.Name = "txtShowScore";
+            txtShowScore.ReadOnly = true;
+            txtShowScore.Size = new Size(67, 41);
+            txtShowScore.TabIndex = 2;
             // 
             // FrmGame
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1031, 623);
-            Controls.Add(lblShowScore);
+            Controls.Add(txtShowScore);
             Controls.Add(lblScore);
             Controls.Add(pbxTable);
             Margin = new Padding(3, 4, 3, 4);
@@ -93,7 +97,7 @@
 
         private PictureBox pbxTable;
         private Label lblScore;
-        private Label lblShowScore;
         private System.Windows.Forms.Timer tmGameTimer;
+        private TextBox txtShowScore;
     }
 }
