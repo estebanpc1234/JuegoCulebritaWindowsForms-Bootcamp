@@ -13,30 +13,18 @@ namespace Juego_Culebrita_WinForms
         public FrmMenu()
         {
             InitializeComponent();
-
-            // Configuramos el mensaje de bienvenida e instrucciones al iniciar
-            lbltext.Text =
-                "¡Bienvenido al juego de Serpiente !\n\n" +
-                 "Instrucciones:\n" +
-                 "* Ingresa tu nombre para comenzar.\n" +
-                 "* Usa las flechas del teclado para moverte.\n" +
-                 "* come las manzanas para crecer " +
-                 "* ¡No choques con las paredes ni con tu cuerpo!";
-
         }
 
         private void bttnJugar_Click(object sender, EventArgs e)
         {
-            
+
             if (!string.IsNullOrWhiteSpace(txtWelcome.Text)) //modificado por expertos 
             {
 
                 FrmGame game = new FrmGame(txtWelcome.Text);
+                game.Owner = this;
 
-   
                 game.Show();
-
-           
                 this.Hide();
 
             }
@@ -51,6 +39,23 @@ namespace Juego_Culebrita_WinForms
         {
             // Cierra toda alv
             Application.Exit();
+        }
+
+        private void txtWelcome_TextChanged(object sender, EventArgs e)
+        {
+            if(sender is TextBox textBox)
+            {
+                if(!string.IsNullOrWhiteSpace(textBox.Text))
+                {
+                    bttnJugar.Enabled = true;
+                }
+                else
+                {
+                    bttnJugar.Enabled = false;
+                }
+            }
+
+            
         }
     }
 }
