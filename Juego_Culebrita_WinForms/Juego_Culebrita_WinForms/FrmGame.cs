@@ -42,10 +42,19 @@ namespace Juego_Culebrita_WinForms
 
             if (snake.IsDead)
             {
-                frmLose lose = new frmLose();
-                this.Hide();
                 tmGameTimer.Stop();
-                lose.ShowDialog();
+
+                frmLose windowlose = new frmLose(this.userName, snake.FoodEaten);
+                this.Hide();
+                
+                windowlose.ShowDialog();
+
+                if (Application.OpenForms["FrmMenu"] != null)
+                {
+                    Application.OpenForms["FrmMenu"]!.Show();
+                }
+
+                this.Close();
             }
             tmGameTimer.Interval = Snake.SpeedUp(snake.FoodEaten);
             pbxTable.Invalidate();
