@@ -4,7 +4,7 @@ using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Juego_Culebrita_WinForms
+namespace Juego_Culebrita_WinForms.Entities
 {
     public class Snake
     {

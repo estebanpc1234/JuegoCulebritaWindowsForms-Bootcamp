@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juego_Culebrita_WinForms.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
