@@ -45,16 +45,11 @@ namespace Juego_Culebrita_WinForms
                 tmGameTimer.Stop();
 
                 frmLose windowlose = new frmLose(this.userName, snake.FoodEaten);
+                windowlose.Owner = this;   
                 this.Hide();
                 
                 windowlose.ShowDialog();
 
-                if (Application.OpenForms["FrmMenu"] != null)
-                {
-                    Application.OpenForms["FrmMenu"]!.Show();
-                }
-
-                this.Close();
             }
             tmGameTimer.Interval = Snake.SpeedUp(snake.FoodEaten);
             pbxTable.Invalidate();
@@ -92,6 +87,13 @@ namespace Juego_Culebrita_WinForms
 
             food = p;
             txtShowScore.Text = snake.FoodEaten.ToString();
+        }
+
+        public void Reset()
+        {
+            snake = new Snake(pbxTable.Width, pbxTable.Height);
+            SpawnFood();
+            tmGameTimer.Enabled = true;
         }
 
     }

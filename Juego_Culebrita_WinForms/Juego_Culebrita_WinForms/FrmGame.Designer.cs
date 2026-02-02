@@ -40,12 +40,11 @@
             // pbxTable
             // 
             pbxTable.BackColor = SystemColors.ButtonShadow;
+            pbxTable.BackgroundImage = (Image)resources.GetObject("pbxTable.BackgroundImage");
             pbxTable.BorderStyle = BorderStyle.Fixed3D;
-            pbxTable.Image = (Image)resources.GetObject("pbxTable.Image");
-            pbxTable.Location = new Point(78, 136);
+            pbxTable.Location = new Point(27, 149);
             pbxTable.Name = "pbxTable";
-            pbxTable.Size = new Size(552, 487);
-            pbxTable.SizeMode = PictureBoxSizeMode.AutoSize;
+            pbxTable.Size = new Size(484, 428);
             pbxTable.TabIndex = 0;
             pbxTable.TabStop = false;
             pbxTable.Paint += pbxTable_Paint;
@@ -54,7 +53,7 @@
             // 
             lblScore.AutoSize = true;
             lblScore.Font = new Font("Segoe UI", 13.8F);
-            lblScore.Location = new Point(75, 81);
+            lblScore.Location = new Point(174, 108);
             lblScore.Name = "lblScore";
             lblScore.Size = new Size(75, 31);
             lblScore.TabIndex = 1;
@@ -70,7 +69,7 @@
             txtShowScore.Enabled = false;
             txtShowScore.Font = new Font("Segoe UI", 15F);
             txtShowScore.HideSelection = false;
-            txtShowScore.Location = new Point(156, 75);
+            txtShowScore.Location = new Point(255, 102);
             txtShowScore.Name = "txtShowScore";
             txtShowScore.ReadOnly = true;
             txtShowScore.Size = new Size(67, 41);
@@ -80,12 +79,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1031, 623);
+            ClientSize = new Size(543, 604);
             Controls.Add(txtShowScore);
             Controls.Add(lblScore);
             Controls.Add(pbxTable);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmGame";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmGame";
             KeyDown += FrmGame_KeyDown;
             ((System.ComponentModel.ISupportInitialize)pbxTable).EndInit();

@@ -105,5 +105,6 @@ namespace Juego_Culebrita_WinForms
                 if (Body[i] == head) { IsDead = true; return; }
         }
 
+
     }
 }
