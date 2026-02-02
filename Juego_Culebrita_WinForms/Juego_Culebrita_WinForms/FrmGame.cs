@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Juego_Culebrita_WinForms.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,7 +22,7 @@ namespace Juego_Culebrita_WinForms
         {
             InitializeComponent();
             this.userName = userName;
-            this.snake = new Snake(pbxTable.Width , pbxTable.Height );
+            this.snake = new Snake(pbxTable.Width , pbxTable.Height);
             random = new Random();
 
             SpawnFood();

@@ -44,7 +44,7 @@
             pbxTable.BorderStyle = BorderStyle.Fixed3D;
             pbxTable.Location = new Point(27, 149);
             pbxTable.Name = "pbxTable";
-            pbxTable.Size = new Size(484, 428);
+            pbxTable.Size = new Size(504, 454);
             pbxTable.TabIndex = 0;
             pbxTable.TabStop = false;
             pbxTable.Paint += pbxTable_Paint;
@@ -53,7 +53,7 @@
             // 
             lblScore.AutoSize = true;
             lblScore.Font = new Font("Segoe UI", 13.8F);
-            lblScore.Location = new Point(174, 108);
+            lblScore.Location = new Point(193, 108);
             lblScore.Name = "lblScore";
             lblScore.Size = new Size(75, 31);
             lblScore.TabIndex = 1;
@@ -69,7 +69,7 @@
             txtShowScore.Enabled = false;
             txtShowScore.Font = new Font("Segoe UI", 15F);
             txtShowScore.HideSelection = false;
-            txtShowScore.Location = new Point(255, 102);
+            txtShowScore.Location = new Point(274, 102);
             txtShowScore.Name = "txtShowScore";
             txtShowScore.ReadOnly = true;
             txtShowScore.Size = new Size(67, 41);
@@ -79,7 +79,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(543, 604);
+            ClientSize = new Size(549, 626);
             Controls.Add(txtShowScore);
             Controls.Add(lblScore);
             Controls.Add(pbxTable);
