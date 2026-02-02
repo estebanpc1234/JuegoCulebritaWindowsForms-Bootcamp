@@ -21,7 +21,7 @@ namespace Juego_Culebrita_WinForms
         {
             InitializeComponent();
             this.userName = userName;
-            this.snake = new Snake(pbxTable.Width , pbxTable.Height );
+            this.snake = new Snake(pbxTable.Width , pbxTable.Height);
             random = new Random();
 
             SpawnFood();
